@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto | Estoque</title>
+    <link href="https://cdn.npm.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f6; padding-top: 50px; }
+        .card { border: none; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .header-estoque { background: #0d6efd; color: white; padding: 20px; border-radius: 10px 10px 0 0; }
+        .form-label { font-weight: 600; color: #495057; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card">
+                <div class="header-estoque">
+                    <h4 class="mb-0"><i class="bi bi-box-seam"></i> Cadastro de Novo Produto</h4>
+                </div>
+                <div class="card-body p-4">
+                    <form id="formEstoque">
+                        
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-3">
+                                <label for="sku" class="form-label">Código/SKU</label>
+                                <input type="text" class="form-control" id="sku" placeholder="Ex: PROD-001">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nome" class="form-label">Nome do Produto</label>
+                                <input type="text" class="form-control" id="nome" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="categoria" class="form-label">Categoria</label>
+                                <select class="form-select" id="categoria">
+                                    <option value="eletronicos">Eletrônicos</option>
+                                    <option value="limpeza">Limpeza</option>
+                                    <option value="escritorio">Escritório</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <label for="estoque_atual" class="form-label">Quantidade Inicial</label>
+                                <input type="number" class="form-control" id="estoque_atual" value="0">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="estoque_minimo" class="form-label">Estoque Mínimo (Alerta)</label>
+                                <input type="number" class="form-control" id="estoque_minimo" value="5">
+                            </div>
+                            <div class="col-md-4">
+                                <label for="unidade" class="form-label">Unidade de Medida</label>
+                                <select class="form-select" id="unidade">
+                                    <option value="un">Unidade (un)</option>
+                                    <option value="kg">Quilo (kg)</option>
+                                    <option value="cx">Caixa (cx)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="preco_custo" class="form-label">Preço de Custo (R$)</label>
+                                <input type="number" class="form-control" id="preco_custo" step="0.01">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="preco_venda" class="form-label">Preço de Venda (R$)</label>
+                                <input type="number" class="form-control" id="preco_venda" step="0.01">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="descricao" class="form-label">Descrição Breve</label>
+                            <textarea class="form-control" id="descricao" rows="2"></textarea>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2">
+                            <button type="button" class="btn btn-light">Cancelar</button>
+                            <button type="submit" class="btn btn-primary px-5">Salvar Produto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
